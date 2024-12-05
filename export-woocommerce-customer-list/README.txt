@@ -3,8 +3,8 @@ Contributors: rajeshsingh520
 Donate link: http://piwebsolution.com
 Tags: Customer list, Export user, Export users, User export, usermeta, Export customer, users, customer csv, export guest, guest csv
 Requires at least: 3.0.1
-Tested up to: 6.7.0
-Stable tag: 2.1.60
+Tested up to: 6.7.1
+Stable tag: 2.1.61
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
