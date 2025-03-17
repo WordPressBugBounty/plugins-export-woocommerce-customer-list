@@ -4,7 +4,7 @@ Donate link: http://piwebsolution.com
 Tags: Customer list, Export user, Export users, User export, usermeta, Export customer, users, customer csv, export guest, guest csv
 Requires at least: 3.0.1
 Tested up to: 6.7.1
-Stable tag: 2.1.67
+Stable tag: 2.1.69
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -126,6 +126,9 @@ That can be done in the pro version
 Yes the Free version and PRO version both are HPOS compatible
 
 == Changelog ==
+
+= 2.1.69 =
+* Tested with WC 9.7.0
 
 = 2.1.67 =
 * Tested with WC 9.6.2
