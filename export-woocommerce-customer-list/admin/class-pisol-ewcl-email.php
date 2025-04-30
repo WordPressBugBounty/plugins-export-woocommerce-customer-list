@@ -28,25 +28,7 @@ class Class_Pi_Ewcl_Email{
     function __construct($plugin_name){
         $this->plugin_name = $plugin_name;
 
-        $this->tab_name = __("Get scheduled email with CSV (attachment)",'pisol-ewcl');
-
-        $this->settings = array(
-            
-            array('field'=>'title', 'class'=> 'bg-primary text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__('Automatically send customer list csv','pisol-ewcl'), 'type'=>"setting_category"),
-
-            array('field'=>'pi_ewcl_enable_email', 'label'=>__('Send customer list in email','pisol-ewcl'),'type'=>'switch', 'default'=> 0,   'desc'=>__('You can schedule when to receive the emails','pisol-ewcl')),
-            
-            array('field'=>'pi_ewcl_email', 'label'=>__('Email id','pisol-ewcl'),'type'=>'text',   'desc'=>__('Email id that will receive the csv attachment email, you can add more then one email id separated with comma ,','pisol-ewcl')),
-
-            array('field'=>'pi_ewcl_email_subject', 'label'=>__('Subject of the email','pisol-ewcl'),'type'=>'text',   'desc'=>__('subject of the email','pisol-ewcl'), 'pro'=>true),
-
-            array('field'=>'pi_ewcl_email_message', 'label'=>__('Message of the email','pisol-ewcl'),'type'=>'text',   'desc'=>__('Message of the email','pisol-ewcl'), 'pro'=>true),
-
-            array('field'=>'pi_ewcl_email_frequency', 'label'=>__('Frequency of email','pisol-ewcl'),'type'=>'select',   'desc'=>__('Email should be send daily, weekly or twice daily','pisol-ewcl'), 'value'=>array('hourly'=>__('Hourly','pisol-ewcl'), 'daily'=>__('Daily','pisol-ewcl'),'twicedaily'=>__('Twice Daily','pisol-ewcl'), 'weekly'=>__('Weekly','pisol-ewcl')), 'default'=>'twicedaily', 'pro'=>true),
-
-            array('field'=>'pi_ewcl_include_report', 'label'=>__('Include Customer','pisol-ewcl'),'type'=>'select',   'desc'=>__('Include Registered customer csv, Guest customer csv or both the customer csv in report','pisol-ewcl'), 'value'=>array('registered'=>__('Send only registered customer detail','pisol-ewcl'), 'guest'=>__('Send only gust customer detail','pisol-ewcl'), 'both'=>__('Send registered and guest customer detail','pisol-ewcl')), 'default'=>'registered', 'pro'=>true),
-            
-        );
+        add_action('init', array($this,'init'));
         
         $this->tab = sanitize_text_field(filter_input( INPUT_GET, 'tab'));
         $this->active_tab = $this->tab != "" ? $this->tab : 'default';
@@ -55,11 +37,7 @@ class Class_Pi_Ewcl_Email{
             add_action($this->plugin_name.'_tab_content', array($this,'tab_content'));
         }
 
-
         add_action($this->plugin_name.'_tab', array($this,'tab'),3);
-
-       
-        $this->register_settings();
 
         if(PI_EWCL_DELETE_SETTING){
             $this->delete_settings();
@@ -86,6 +64,30 @@ class Class_Pi_Ewcl_Email{
                 wp_schedule_event( time(), $this->frequency, $this->cron_event );
             }
         }
+    }
+
+    function init(){
+        $this->tab_name = __("Get scheduled email with CSV (attachment)",'pisol-ewcl');
+
+        $this->settings = array(
+            
+            array('field'=>'title', 'class'=> 'bg-primary text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__('Automatically send customer list csv','pisol-ewcl'), 'type'=>"setting_category"),
+
+            array('field'=>'pi_ewcl_enable_email', 'label'=>__('Send customer list in email','pisol-ewcl'),'type'=>'switch', 'default'=> 0,   'desc'=>__('You can schedule when to receive the emails','pisol-ewcl')),
+            
+            array('field'=>'pi_ewcl_email', 'label'=>__('Email id','pisol-ewcl'),'type'=>'text',   'desc'=>__('Email id that will receive the csv attachment email, you can add more then one email id separated with comma ,','pisol-ewcl')),
+
+            array('field'=>'pi_ewcl_email_subject', 'label'=>__('Subject of the email','pisol-ewcl'),'type'=>'text',   'desc'=>__('subject of the email','pisol-ewcl'), 'pro'=>true),
+
+            array('field'=>'pi_ewcl_email_message', 'label'=>__('Message of the email','pisol-ewcl'),'type'=>'text',   'desc'=>__('Message of the email','pisol-ewcl'), 'pro'=>true),
+
+            array('field'=>'pi_ewcl_email_frequency', 'label'=>__('Frequency of email','pisol-ewcl'),'type'=>'select',   'desc'=>__('Email should be send daily, weekly or twice daily','pisol-ewcl'), 'value'=>array('hourly'=>__('Hourly','pisol-ewcl'), 'daily'=>__('Daily','pisol-ewcl'),'twicedaily'=>__('Twice Daily','pisol-ewcl'), 'weekly'=>__('Weekly','pisol-ewcl')), 'default'=>'twicedaily', 'pro'=>true),
+
+            array('field'=>'pi_ewcl_include_report', 'label'=>__('Include Customer','pisol-ewcl'),'type'=>'select',   'desc'=>__('Include Registered customer csv, Guest customer csv or both the customer csv in report','pisol-ewcl'), 'value'=>array('registered'=>__('Send only registered customer detail','pisol-ewcl'), 'guest'=>__('Send only gust customer detail','pisol-ewcl'), 'both'=>__('Send registered and guest customer detail','pisol-ewcl')), 'default'=>'registered', 'pro'=>true),
+            
+        );
+
+        $this->register_settings();
     }
 
     
