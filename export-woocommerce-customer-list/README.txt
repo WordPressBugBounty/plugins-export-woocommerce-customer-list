@@ -3,8 +3,8 @@ Contributors: rajeshsingh520
 Donate link: http://piwebsolution.com
 Tags: Customer list, Export user, Export users, User export, usermeta, Export customer, users, customer csv, export guest, guest csv
 Requires at least: 3.0.1
-Tested up to: 6.8.0
-Stable tag: 2.1.72
+Tested up to: 6.8
+Stable tag: 2.1.73
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -125,7 +125,18 @@ That can be done in the pro version
 = Is it HPOS compatible =
 Yes the Free version and PRO version both are HPOS compatible
 
+== Screenshots ==
+1. Exporting registered customer list by export WooCommerce customer list plugin
+2. Configure field to be exported
+3. Option to include custom order meta data in export WooCommerce customer list plugin
+4. Exporting guest customer list 
+5. Sending customer list in email attachment automatically using export WooCommerce customer list plugin
+6. Sending customer list in email attachment automatically 
+
 == Changelog ==
+
+= 2.1.73 =
+* export customer list woocommerce plugin tested for WC 9.9.3
 
 = 2.1.72 =
 * Tested with WC 9.8.0
