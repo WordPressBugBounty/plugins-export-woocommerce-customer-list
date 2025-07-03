@@ -10,7 +10,7 @@ class Class_Pi_Ewcl_Email{
 
     private $this_tab = 'email';
 
-    private $tab_name = "Get scheduled email with CSV (attachment)";
+    private $tab_name = "Schedule CSV";
 
     private $setting_key = 'pi_ewcl_email_setting';
 
@@ -67,11 +67,11 @@ class Class_Pi_Ewcl_Email{
     }
 
     function init(){
-        $this->tab_name = __("Get scheduled email with CSV (attachment)",'pisol-ewcl');
+        $this->tab_name = __("Schedule CSV",'pisol-ewcl');
 
         $this->settings = array(
             
-            array('field'=>'title', 'class'=> 'bg-primary text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__('Automatically send customer list csv','pisol-ewcl'), 'type'=>"setting_category"),
+            array('field'=>'title', 'class'=> 'bg-dark opacity-75 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__('Automatically send customer list csv','pisol-ewcl'), 'type'=>"setting_category"),
 
             array('field'=>'pi_ewcl_enable_email', 'label'=>__('Send customer list in email','pisol-ewcl'),'type'=>'switch', 'default'=> 0,   'desc'=>__('You can schedule when to receive the emails','pisol-ewcl')),
             
@@ -109,7 +109,7 @@ class Class_Pi_Ewcl_Email{
         $page = sanitize_text_field(filter_input( INPUT_GET, 'page'));
         ?>
         <a class=" px-3 text-light d-flex align-items-center  border-left border-right  <?php echo esc_attr($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo esc_url(admin_url( 'admin.php?page='.$page.'&tab='.$this->this_tab )); ?>">
-            <?php echo esc_html__( $this->tab_name); ?> 
+            <span class="dashicons dashicons-email-alt2"></span> <?php echo esc_html__( $this->tab_name); ?> 
         </a>
         <?php
     }
@@ -128,7 +128,7 @@ class Class_Pi_Ewcl_Email{
         FREE Version will send customer list in email Twice Daily, In PRO version you can change the FREQUENCY to <strong>Daily, Weekly, Hourly</strong> email will contain the user registered during this time period<br>
         <strong>Free version will not</strong> send the Guest customer record in email
         </div>
-        <input type="submit" class="mt-3 btn btn-primary btn-sm" value="Save Option" />
+        <input type="submit" class="my-3 btn btn-primary btn-md" value="Save Option" />
         </form>
        <?php
     }

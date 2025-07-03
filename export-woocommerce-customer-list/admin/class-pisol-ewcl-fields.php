@@ -10,7 +10,7 @@ class class_fields{
 
     private $this_tab = 'fields';
 
-    private $tab_name = "Fields in CSV";
+    private $tab_name = "CSV Fields";
 
     private $setting_key = 'pi_ewcl_fields_setting';
 
@@ -33,7 +33,6 @@ class class_fields{
         $this->sub_menu = (isset($_GET['sub_menu'])) ? sanitize_text_field($_GET['sub_menu']) : 'sub_menu_default';
         if($this->this_tab == $this->active_tab){
             add_action($this->plugin_name.'_tab_content', array($this,'tab_content'));
-            add_action($this->plugin_name.'_tab_sub_menu', array($this,'tabSubMenu'));
         }
 
 
@@ -45,21 +44,6 @@ class class_fields{
        
 
     }
-
-    function tabSubMenu(){
-        $page = sanitize_text_field(filter_input( INPUT_GET, 'page'));
-        ?>
-        <div class="d-flex">
-            
-                <a href="<?php echo esc_url(admin_url( 'admin.php?page='.$page.'&tab='.$this->this_tab )); ?>&sub_menu=sub_menu_default" class="col-6 py-2 align-items-center justify-content-center px-3 text-light d-flex border-left border-right border-top <?php echo esc_attr(($this->sub_menu == 'sub_menu_default' ? 'bg-primary' : 'bg-secondary')); ?>"><?php echo esc_html__('Select fields to add in Registered Customer CSV','pisol-ewcl'); ?></a>
-           
-            
-                <a href="<?php echo esc_url(admin_url( 'admin.php?page='.$page.'&tab='.$this->this_tab )); ?>&sub_menu=sub_menu_add_customer_extra_field" class="col-6 py-2 text-center px-3 text-light d-flex align-items-center justify-content-center  border-left border-right border-top <?php echo esc_attr(($this->sub_menu == 'sub_menu_add_customer_extra_field' ? 'bg-primary' : 'bg-secondary')); ?>"><?php echo esc_html__('Add Extra field, other then given by us','pisol-ewcl'); ?></a>
-           
-        </div>
-        <?php
-    }
-
     
     function delete_settings(){
         foreach($this->settings as $setting){
@@ -79,8 +63,13 @@ class class_fields{
         $page = sanitize_text_field(filter_input( INPUT_GET, 'page'));
         ?>
         <a class=" px-3 text-light d-flex align-items-center  border-left border-right  <?php echo esc_attr(($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary')); ?>" href="<?php echo esc_url(admin_url( 'admin.php?page='.$page.'&tab='.$this->this_tab )); ?>">
-            <?php echo esc_html( $this->tab_name); ?> 
+           <span class="dashicons dashicons-media-spreadsheet"></span>  <?php echo esc_html( $this->tab_name); ?> 
         </a>
+        <div class="pi-sub-menu">
+        <a href="<?php echo esc_url(admin_url( 'admin.php?page='.$page.'&tab='.$this->this_tab )); ?>&sub_menu=sub_menu_add_customer_extra_field" class="px-3 text-light d-flex align-items-center  border-left border-right <?php echo esc_attr(($this->sub_menu == 'sub_menu_add_customer_extra_field' ? 'bg-primary' : 'bg-secondary')); ?>">
+            <span class="pi-icon">&rarr;</span> <?php echo esc_html__('Add Custom fields (PRO)','pisol-ewcl'); ?>
+        </a>
+        </div>
         <?php
     }
 
@@ -97,22 +86,26 @@ class class_fields{
     function tabContentCsvFields(){
         $customer_rows = get_option('pi_customer_row',array());
         ?>
+        <div id="row_title" class="row py-4 border-bottom align-items-center bg-dark opacity-75 text-light">
+            <div class="col-12">
+            <h2 class="mt-0 mb-0 text-light font-weight-light h4">Fields in Downloaded Excell/CSV file</h2>
+            </div>
+        </div>
         <form action="options.php" method="POST">
         <?php //print_r($customer_rows); ?>
         <?php settings_fields( $this->setting_key ); ?>
-         <h2 class="my-3 h3">You can select the field that you want in CSV, and the heading given to that field in exported document</h2>
              <div>
                  <?php $this->generateFieldsTable($customer_rows); ?>
              </div>
              
-             <input type="submit" class="btn btn-primary mt-3" value="Save Fields">
+             <input type="submit" class="btn btn-primary my-3 btn-md" value="Save Fields">
          </form>
         <?php
     }
 
     function tabContentAddExtraFields(){
        ?>
-       <div id="row_title" class="row py-4 border-bottom align-items-center bg-primary text-light mb-3">
+       <div id="row_title" class="row py-4 border-bottom align-items-center bg-dark opacity-75 text-light mb-3">
                 <div class="col-12">
                 <h2 class="mt-0 mb-0 text-light font-weight-light h4"><?php echo esc_html__('Add extra user meta field that you want to add to download row but are not present in our provided list, so you can add them here','pisol-ewcl'); ?></h2>
                 </div>
@@ -139,7 +132,7 @@ class class_fields{
             <div id="pi-ewcl-field-container">
 
             </div>
-            <button href="javascript:void(0);" class="mt-3 btn btn-primary btn-sm " id="pi-ewcl-add-custom-meta" disabled>Save Fields</button>
+            <button href="javascript:void(0);" class="my-3 btn btn-primary btn-md " id="pi-ewcl-add-custom-meta" disabled>Save Fields</button>
             </div>
        </div>
        <?php

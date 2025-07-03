@@ -18,7 +18,7 @@ class Class_Pi_Ewcl_Guest{
 
     function __construct($plugin_name){
         $this->plugin_name = $plugin_name;
-        $this->tab_name = __("Guest customer list",'pisol-ewcl');
+        $this->tab_name = __("Download Guest Customers",'pisol-ewcl');
         $this->settings = array(
             
             array('field'=>'pi_guest_row')
@@ -58,7 +58,7 @@ class Class_Pi_Ewcl_Guest{
         $page = sanitize_text_field(filter_input( INPUT_GET, 'page'));
         ?>
         <a class=" px-3 text-light d-flex align-items-center  border-left border-right  <?php echo esc_attr($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo esc_url(admin_url( 'admin.php?page='.$page.'&tab='.$this->this_tab )); ?>">
-            <?php echo esc_html( $this->tab_name); ?> 
+            <span class="dashicons dashicons-groups"></span> <?php echo esc_html( $this->tab_name); ?> 
         </a>
         <?php
     }
@@ -69,7 +69,7 @@ class Class_Pi_Ewcl_Guest{
        ?>
        <form id="ewcl-download-guest-record" action="<?php echo esc_url(admin_url( 'admin.php?page='.$page.'&tab='.$this->this_tab.'&pi_action=download_guest_list')); ?>" method="POST">
 
-       <div id="row_title" class="row py-4 border-bottom align-items-center bg-primary text-light">
+       <div id="row_title" class="row py-4 border-bottom align-items-center bg-dark opacity-75 text-light">
             <div class="col-12">
             <h2 class="mt-0 mb-0 text-light font-weight-light h4"><?php echo esc_html__('Download Guest Customer', 'pisol-ewcl'); ?></h2>
             </div>

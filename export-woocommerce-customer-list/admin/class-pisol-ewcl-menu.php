@@ -62,7 +62,7 @@ class Pi_Ewcl_Menu{
                                     <a href="https://www.piwebsolution.com/" target="_blank"><img class="img-fluid ml-2" src="<?php echo plugin_dir_url( __FILE__ ); ?>img/pi-web-solution.png"></a>
                             </div>
                             <div class="col-12 col-sm-10 d-flex small text-center pisol-top-menu">
-                                <?php do_action($this->plugin_name.'_tab'); ?>
+                                <?php //do_action($this->plugin_name.'_tab'); ?>
                                 <!--<a class=" px-3 text-light d-flex align-items-center  border-left border-right  bg-info " href="https://www.piwebsolution.com/documentation-for-live-sales-notifications-for-woocommerce-plugin/">
                                     Documentation
                                 </a>-->
@@ -74,12 +74,17 @@ class Pi_Ewcl_Menu{
             <?php do_action($this->plugin_name.'_tab_sub_menu'); ?>
             <div class="pisol-row">
                 <div class="col-12">
-                <div class="bg-light border pl-3 pr-3 pb-3 pt-0">
+                <div class="bg-light border pl-3 pr-3 pt-0">
                     <div class="pisol-row">
                         <div class="col">
                         <?php do_action($this->plugin_name.'_tab_content'); ?>
                         </div>
-                        <?php do_action($this->plugin_name.'_promotion'); ?>
+                        <div class="col-12 col-sm-12 col-md-4 border-left">
+                            <div id="pisol-side-menu" class="mb-4 rounded py-4">
+                                <?php do_action($this->plugin_name.'_tab'); ?>
+                            </div>
+                            <?php do_action($this->plugin_name.'_promotion'); ?>
+                        </div>
                     </div>
                 </div>
                 </div>
@@ -92,45 +97,43 @@ class Pi_Ewcl_Menu{
     function promotion(){
         if(isset($_GET['tab']) && $_GET['tab'] == 'other_plugins') return;
         ?>
-         <div class="col-12 col-sm-12 col-md-4 pt-3">
-                <div class="bg-dark text-light text-center mb-3">
+
+            <div class="pi-shadow px-3 py-3 rounded">
+                <h2 id="pi-banner-tagline" class="mb-0 mt-3" style="color:#ccc !important;">
+                        <span class="d-block mb-4">⭐️⭐️⭐️⭐️⭐️</span>
+                        <span class="d-block mb-2">🚀 Trusted by <span style="color:#fff;">3,000+</span> WooCommerce Stores</span>
+                        <span class="d-block mb-2">Rated <span style="color:#fff;">4.9/5</span> – Users love it</span>
+                </h2>
+                <div class="inside">
+                    <ul class="pisol-pro-feature-list my-4">
+                        <li>✔ Export guest customer list</li>
+                        <li>✔ Filter by order status</li>
+                        <li>✔ Customize CSV column labels</li>
+                        <li>✔ Download by registration date</li>
+                        <li>✔ Download by date range</li>
+                        <li>✔ Get list via email (Hourly, Daily, etc.)</li>
+                        <li>✔ Email list of recent signups</li>
+                        <li>✔ Export extra user data from other plugins</li>
+                        <li>✔ Choose guest, registered, or both in email</li>
+                        <li>✔ Control download speed</li>
+                    </ul>
+
+                    <h4 class="pi-bottom-banner">💰 Just <?php echo esc_html(PI_EWCL_PRICE); ?></h4>
+                    <h4 class="pi-bottom-banner">🔥 Unlock all features and grow your sales!</h4>
+
+                    <div class="text-center pb-3 pt-2">
+                    <a class="btn btn-primary btn-lg" href="<?php echo esc_url(PI_EWCL_BUY_URL); ?>&utm_ref=bottom_link" target="_blank">🔓 Unlock Pro Now – Limited Time Price!</a>
+                    </div>
+                </div>
+               </div>
+
+               <div class="bg-dark text-light text-center mb-3">
                     <a href="<?php echo esc_url(PI_EWCL_BUY_URL); ?>" target="_blank">
                     <?php  new pisol_promotion("pi_ewcl_installation_date"); ?>
                     </a>
                 </div>
 
-            <div class="pi-shadow">
-                <div class="pisol-row justify-content-center">
-                    <div class="col-md-9 col-sm-12">
-                        <div class="p-2 text-center">
-                            <img class="img-fluid" src="<?php echo esc_url(plugin_dir_url( __FILE__ )); ?>img/bg.svg">
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center py-2">
-                    <a class="btn btn-success btn-sm text-uppercase mb-2 " href="<?php echo esc_url(PI_EWCL_BUY_URL); ?>&utm_ref=top_link" target="_blank">Buy Now !!</a>
-                </div>
-                <h2 id="pi-banner-tagline" class="mb-0">Get Pro for <?php echo esc_html(PI_EWCL_PRICE); ?> Only</h2>
-                <div class="inside">
-                    <ul class="pisol-pro-feature-list">
-					    <li class="border-top font-weight-light h6"><strong  class="text-primary">Export gust customer</strong> list</li>
-                        <li class="border-top font-weight-light h6">Filter guest customer list based on the <strong  class="text-primary">Order Status</strong></li>
-                        <li class="border-top font-weight-light h6">Modify the <strong class="text-primary">label of the CSV columns</strong> (and save them so you can directly export csv in your external software)</li>
-                        <li class="border-top font-weight-light h6">Download users based on <strong  class="text-primary">registration date</strong></li>
-                        <li class="border-top font-weight-light h6">Download customers based on registration done between a certain <strong  class="text-primary">date range</strong></li>
-                        <li class="border-top font-weight-light h6">Get customer list in an email attachment, on set frequency <strong  class="text-primary">(Hourly, Twice Daily, Daily, Weekly)</strong></li>
-                        <li class="border-top font-weight-light h6">Get the list of users <strong  class="text-primary">registered in the set interval</strong> in an email (Hourly, Daily, Twice Daily, Weekly)</li>
-                        <li class="border-top font-weight-light h6">Download <strong  class="text-primary">extra user-related date</strong> (Extra date is one that is added by plugin other than WooCommerce or WordPress)</li>
-                        <li class="border-top font-weight-light h6">Select if you want to receive Registered customer, Guest customer or both customer <strong  class="text-primary">record in email</strong></li>
-                        <li class="border-top font-weight-light h6">Adjust <strong  class="text-primary">download speed</strong></li>
-                    </ul>
-                    <div class="text-center pb-3 pt-2">
-                    <a class="btn btn-primary btn-lg" href="<?php echo esc_url(PI_EWCL_BUY_URL); ?>&utm_ref=bottom_link" target="_blank">Click to Buy Now</a>
-                    </div>
-                </div>
-               </div>
-
-            </div>
+            
         <?php
     }
 

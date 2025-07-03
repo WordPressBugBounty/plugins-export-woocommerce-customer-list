@@ -18,4 +18,5 @@ require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-pisol-ewcl-me
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-pisol-ewcl-option.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-pisol-ewcl-guest.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-pisol-ewcl-email.php';
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-analytics.php';
 

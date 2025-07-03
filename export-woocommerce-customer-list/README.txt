@@ -4,7 +4,7 @@ Donate link: http://piwebsolution.com
 Tags: Customer list, Export user, Export users, User export, usermeta, Export customer, users, customer csv, export guest, guest csv
 Requires at least: 3.0.1
 Tested up to: 6.8
-Stable tag: 2.1.73
+Stable tag: 2.1.74
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -135,6 +135,10 @@ Yes the Free version and PRO version both are HPOS compatible
 
 == Changelog ==
 
+= 2.1.74 =
+* Export customer list woocommerce plugin tested for WC 9.9.5
+* UI improved for Export customer list woocommerce plugin
+
 = 2.1.73 =
 * export customer list woocommerce plugin tested for WC 9.9.3
 
@@ -183,3 +187,15 @@ Yes the Free version and PRO version both are HPOS compatible
 
 = 2.0.79 =
 * Backend css changes
+
+== Privacy ==
+
+If you choose to opt in from the plugin settings, or submit optional feedback during deactivation, this plugin may collect basic technical information, including:
+
+- Plugin version  
+- WordPress version  
+- WooCommerce version  
+- Site url
+- Deactivation reason (if submitted)
+
+This data is used solely to improve plugin quality, compatibility, and features. No personal or user-specific data is collected without consent.

@@ -19,7 +19,7 @@ class Class_Pi_Ewcl_Option{
 
     function __construct($plugin_name){
         $this->plugin_name = $plugin_name;
-        $this->tab_name = __("Registered Customer list" , 'pisol-ewcl');
+        $this->tab_name = __("Download Registered Customers" , 'pisol-ewcl');
 
         $this->settings = array(
             
@@ -55,7 +55,7 @@ class Class_Pi_Ewcl_Option{
         $page = sanitize_text_field(filter_input( INPUT_GET, 'page'));
         ?>
         <a class=" px-3 text-light d-flex align-items-center  border-left border-right  <?php echo esc_attr($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo esc_url(admin_url( 'admin.php?page='.$page.'&tab='.$this->this_tab )); ?>">
-            <?php echo esc_html($this->tab_name); ?> 
+           <span class="dashicons dashicons-admin-users"></span> <?php echo esc_html($this->tab_name); ?> 
         </a>
         <?php
     }
@@ -74,14 +74,14 @@ class Class_Pi_Ewcl_Option{
         $page = sanitize_text_field(filter_input( INPUT_GET, 'page'));
        ?>
        <form id="ewcl-download-registered-record" action="<?php echo esc_url(admin_url( 'admin.php?page='.$page.'&pi_action=download_customer_list')); ?>" method="POST">
-       <div id="row_title" class="row py-4 border-bottom align-items-center bg-primary text-light">
+       <div id="row_title" class="row py-4 border-bottom align-items-center bg-dark opacity-75 text-light">
             <div class="col-12">
-            <h2 class="mt-0 mb-0 text-light font-weight-light h4"><?php echo esc_html__('Advance download option', 'pisol-ewcl') ?></h2>
+            <h2 class="mt-0 mb-0 text-light font-weight-light h4"><?php echo esc_html__('Download registered customers', 'pisol-ewcl') ?></h2>
             </div>
         </div>
         <div id="row_pi_ewcl_download_limit" class="row py-4 border-bottom align-items-center ">
             <div class="col-12 col-md-5">
-            <label class="h6 mb-0" for="pi_ewcl_download_limit"><?php echo esc_html__('Number of rows to extract', 'pisol-ewcl') ?></label>            <br><small><?php echo esc_html__('Specify number of rows to extract<br> 0 means all rows will be extracted<br>This should be multiple of 6', 'pisol-ewcl') ?></small>            </div>
+            <label class="h6 mb-0" for="pi_ewcl_download_limit"><?php echo esc_html__('Number of rows to extract', 'pisol-ewcl') ?></label>            <br><small><?php echo wp_kses_post(__('Specify number of rows to extract<br> 0 means all rows will be extracted<br>This should be multiple of 6', 'pisol-ewcl')); ?></small>            </div>
             <div class="col-12 col-md-7">
             <input type="number" class="form-control " name="pi_ewcl_download_limit" id="pi_ewcl_download_limit" value="0" min="0" step="6" placeholder="should be multiple of 6">            </div>
         </div>
@@ -137,7 +137,7 @@ class Class_Pi_Ewcl_Option{
             </div>
         </div>
        <div class="text-center pt-5">
-        <input type="submit" class="btn btn-primary btn-lg my-2" value="<?php echo esc_html__('Download Customer List', 'pisol-ewcl'); ?>">
+        <input type="submit" class="btn btn-primary btn-lg my-2" value="<?php echo esc_html__('Download Registered Customer List', 'pisol-ewcl'); ?>">
         </div>
         <?php wp_nonce_field( 'pisol-ewcl-registered-customer'); ?>
        </form>
