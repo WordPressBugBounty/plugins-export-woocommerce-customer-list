@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              piwebsolution.com
- * @since             2.1.76
+ * @since             2.1.77
  * @package           Pisol_Ewcl
  *
  * @wordpress-plugin
  * Plugin Name:       Export customers list csv for WooCommerce, WordPress users csv, export Guest customer list
  * Plugin URI:        piwebsolution.com/get-a-quotation/
  * Description:       Export customer list from WooCommerce with one click
- * Version:           2.1.76
+ * Version:           2.1.77
  * Author:            PI Websolution
  * Author URI:        piwebsolution.com
  * License:           GPL-2.0+
@@ -34,36 +34,36 @@ include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
 
 if(is_plugin_active( 'export-woocommerce-customer-list-pro/pisol-ewcl.php')){
-    function pi_ewcl_free_error_notice() {
+    
+    add_action( 'admin_notices', function () {
         ?>
         <div class="error notice">
             <p><?php echo esc_html__( 'You have the PRO version of this plugin','pisol-ewcl'); ?></p>
         </div>
         <?php
-    }
-    add_action( 'admin_notices', 'pi_ewcl_free_error_notice' );
+    } );
     deactivate_plugins(plugin_basename(__FILE__));
     return;
 }else{
 
 if(!is_plugin_active( 'woocommerce/woocommerce.php')){
-	function pi_ewcl_free_woo_error_notice() {
+	
+	add_action( 'admin_notices', function () {
 		?>
 		<div class="error notice">
 			<p><?php _e( 'Please Install and Activate WooCommerce plugin, without that this plugin cant work', 'pisol-ewcl' ); ?></p>
 		</div>
 		<?php
-	}
-	add_action( 'admin_notices', 'pi_ewcl_free_woo_error_notice' );
+	} );
 	return;
 }
 
 /**
  * Currently plugin version.
- * Start at version 2.1.76 and use SemVer - https://semver.org
+ * Start at version 2.1.77 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'PISOL_EWCL_VERSION', '2.1.76' );
+define( 'PISOL_EWCL_VERSION', '2.1.77' );
 define( 'PI_EWCL_DELETE_SETTING', false );
 define( 'PI_EWCL_PRICE', '$25' );
 define( 'PI_EWCL_BUY_URL', 'https://www.piwebsolution.com/checkout/?add-to-cart=1596&variation_id=1597&utm_campaign=export_customer&utm_source=website&utm_medium=direct-buy' );

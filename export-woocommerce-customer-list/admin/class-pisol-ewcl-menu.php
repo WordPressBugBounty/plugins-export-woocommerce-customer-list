@@ -106,16 +106,16 @@ class Pi_Ewcl_Menu{
                 </h2>
                 <div class="inside">
                     <ul class="pisol-pro-feature-list my-4">
-                        <li>✔ Export guest customer list</li>
-                        <li>✔ Filter by order status</li>
-                        <li>✔ Customize CSV column labels</li>
-                        <li>✔ Download by registration date</li>
-                        <li>✔ Download by date range</li>
-                        <li>✔ Get list via email (Hourly, Daily, etc.)</li>
-                        <li>✔ Email list of recent signups</li>
-                        <li>✔ Export extra user data from other plugins</li>
-                        <li>✔ Choose guest, registered, or both in email</li>
-                        <li>✔ Control download speed</li>
+                        <li><span style="color:white;">&#10003;</span> Export guest customer list</li>
+                        <li><span style="color:white;">&#10003;</span> Filter by order status</li>
+                        <li><span style="color:white;">&#10003;</span> Customize CSV column labels</li>
+                        <li><span style="color:white;">&#10003;</span> Download by registration date</li>
+                        <li><span style="color:white;">&#10003;</span> Download by date range</li>
+                        <li><span style="color:white;">&#10003;</span> Get list via email (Hourly, Daily, etc.)</li>
+                        <li><span style="color:white;">&#10003;</span> Email list of recent signups</li>
+                        <li><span style="color:white;">&#10003;</span> Export extra user data from other plugins</li>
+                        <li><span style="color:white;">&#10003;</span> Choose guest, registered, or both in email</li>
+                        <li><span style="color:white;">&#10003;</span> Control download speed</li>
                     </ul>
 
                     <h4 class="pi-bottom-banner">💰 Just <?php echo esc_html(PI_EWCL_PRICE); ?></h4>
