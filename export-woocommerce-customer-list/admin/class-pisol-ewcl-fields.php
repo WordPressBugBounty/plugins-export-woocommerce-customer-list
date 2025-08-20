@@ -70,6 +70,9 @@ class class_fields{
             <span class="pi-icon">&rarr;</span> <?php echo esc_html__('Add Custom fields (PRO)','pisol-ewcl'); ?>
         </a>
         </div>
+        <a class=" px-3 text-light d-flex align-items-center  border-left border-right  bg-secondary" href="https://www.piwebsolution.com/user-documentation-export-customer-list-for-woocommerce/" target="_blank">
+           <span class="dashicons dashicons-book"></span> Documentation
+        </a>
         <?php
     }
 
@@ -88,7 +91,7 @@ class class_fields{
         ?>
         <div id="row_title" class="row py-4 border-bottom align-items-center bg-dark opacity-75 text-light">
             <div class="col-12">
-            <h2 class="mt-0 mb-0 text-light font-weight-light h4">Fields in Downloaded Excell/CSV file</h2>
+            <h2 class="mt-0 mb-0 text-light font-weight-light h4">Fields in Downloaded Excel/CSV file</h2>
             </div>
         </div>
         <form action="options.php" method="POST">
@@ -114,15 +117,15 @@ class class_fields{
             
             <div class="col-12 col-md-12">
             <div class="alert alert-info text-center">
-            <?php echo esc_html__('This is only Available only in PRO Version','pisol-ewcl'); ?>
+            <?php echo esc_html__('This is only available in the PRO version','pisol-ewcl'); ?>
             </div>
             <div class="border p-2">
-                <b>Step 1:</b> Get the name of the user meta field that you want to add in csv (and make sure that field is not present in our given list)<br>
-                <b>Step 2:</b> Add that name on the left side form<br>
-                <b>Step 3:</b> Go to the "select field to add in CSV"<br>
-                <b>Step 4:</b> Your added field will appear in the list, select it and save it <br>
+                <b>Step 1:</b> Get the name of the user meta field that you want to add to the CSV (and make sure that field is not present in our provided list)<br>
+                <b>Step 2:</b> Add that name in the left-side form<br>
+                <b>Step 3:</b> Go to the "select field to add in CSV" section<br>
+                <b>Step 4:</b> Your added field will appear in the list; select it and save it.<br>
                 <br>
-                In case you want to remove that field from CSV you can unselect it, or if you want to completely remove it then remove it from this form where you addd it
+                In case you want to remove that field from the CSV you can unselect it, or if you want to completely remove it then remove it from this form where you added it.
             </div>
             <div class="row mt-3">
                 <div class="col-12 text-left">

@@ -75,15 +75,15 @@ class Class_Pi_Ewcl_Email{
 
             array('field'=>'pi_ewcl_enable_email', 'label'=>__('Send customer list in email','pisol-ewcl'),'type'=>'switch', 'default'=> 0,   'desc'=>__('You can schedule when to receive the emails','pisol-ewcl')),
             
-            array('field'=>'pi_ewcl_email', 'label'=>__('Email id','pisol-ewcl'),'type'=>'text',   'desc'=>__('Email id that will receive the csv attachment email, you can add more then one email id separated with comma ,','pisol-ewcl')),
+            array('field'=>'pi_ewcl_email', 'label'=>__('Email ID','pisol-ewcl'),'type'=>'text',   'desc'=>__('Email address that will receive the CSV attachment. You can add more than one email address separated with commas.','pisol-ewcl')),
 
-            array('field'=>'pi_ewcl_email_subject', 'label'=>__('Subject of the email','pisol-ewcl'),'type'=>'text',   'desc'=>__('subject of the email','pisol-ewcl'), 'pro'=>true),
+            array('field'=>'pi_ewcl_email_subject', 'label'=>__('Email subject','pisol-ewcl'),'type'=>'text',   'desc'=>__('Subject of the email','pisol-ewcl'), 'pro'=>true),
 
-            array('field'=>'pi_ewcl_email_message', 'label'=>__('Message of the email','pisol-ewcl'),'type'=>'text',   'desc'=>__('Message of the email','pisol-ewcl'), 'pro'=>true),
+            array('field'=>'pi_ewcl_email_message', 'label'=>__('Email message','pisol-ewcl'),'type'=>'text',   'desc'=>__('Message of the email','pisol-ewcl'), 'pro'=>true),
 
-            array('field'=>'pi_ewcl_email_frequency', 'label'=>__('Frequency of email','pisol-ewcl'),'type'=>'select',   'desc'=>__('Email should be send daily, weekly or twice daily','pisol-ewcl'), 'value'=>array('hourly'=>__('Hourly','pisol-ewcl'), 'daily'=>__('Daily','pisol-ewcl'),'twicedaily'=>__('Twice Daily','pisol-ewcl'), 'weekly'=>__('Weekly','pisol-ewcl')), 'default'=>'twicedaily', 'pro'=>true),
+            array('field'=>'pi_ewcl_email_frequency', 'label'=>__('Email frequency','pisol-ewcl'),'type'=>'select',   'desc'=>__('Email should be sent hourly, daily, weekly, or twice daily','pisol-ewcl'), 'value'=>array('hourly'=>__('Hourly','pisol-ewcl'), 'daily'=>__('Daily','pisol-ewcl'),'twicedaily'=>__('Twice Daily','pisol-ewcl'), 'weekly'=>__('Weekly','pisol-ewcl')), 'default'=>'twicedaily', 'pro'=>true),
 
-            array('field'=>'pi_ewcl_include_report', 'label'=>__('Include Customer','pisol-ewcl'),'type'=>'select',   'desc'=>__('Include Registered customer csv, Guest customer csv or both the customer csv in report','pisol-ewcl'), 'value'=>array('registered'=>__('Send only registered customer detail','pisol-ewcl'), 'guest'=>__('Send only gust customer detail','pisol-ewcl'), 'both'=>__('Send registered and guest customer detail','pisol-ewcl')), 'default'=>'registered', 'pro'=>true),
+            array('field'=>'pi_ewcl_include_report', 'label'=>__('Include customers','pisol-ewcl'),'type'=>'select',   'desc'=>__('Include Registered customer CSV, Guest customer CSV, or both in the report','pisol-ewcl'), 'value'=>array('registered'=>__('Send only registered customer details','pisol-ewcl'), 'guest'=>__('Send only guest customer details','pisol-ewcl'), 'both'=>__('Send registered and guest customer details','pisol-ewcl')), 'default'=>'registered', 'pro'=>true),
             
         );
 
@@ -124,10 +124,10 @@ class Class_Pi_Ewcl_Email{
                 new pisol_class_form_ewcl($setting, $this->setting_key);
             }
         ?>
-        <div class="alert alert-danger mt-2">
-        FREE Version will send customer list in email Twice Daily, In PRO version you can change the FREQUENCY to <strong>Daily, Weekly, Hourly</strong> email will contain the user registered during this time period<br>
-        <strong>Free version will not</strong> send the Guest customer record in email
-        </div>
+    <div class="alert alert-danger mt-2">
+    FREE version will send the customer list by email twice daily. In the PRO version you can change the frequency to <strong>Daily, Weekly, Hourly</strong>. The email will contain users registered during the selected time period.<br>
+    <strong>Free version will not</strong> send guest customer records by email.
+    </div>
         <input type="submit" class="my-3 btn btn-primary btn-md" value="Save Option" />
         </form>
        <?php

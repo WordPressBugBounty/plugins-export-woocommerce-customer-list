@@ -71,19 +71,12 @@ class Class_Pi_Ewcl_Guest{
 
        <div id="row_title" class="row py-4 border-bottom align-items-center bg-dark opacity-75 text-light">
             <div class="col-12">
-            <h2 class="mt-0 mb-0 text-light font-weight-light h4"><?php echo esc_html__('Download Guest Customer', 'pisol-ewcl'); ?></h2>
-            </div>
-        </div>
-        <div id="row_title" class="row py-4 border-bottom">
-            <div class="col-12">
-            <div class="alert alert-primary">
-                <?php echo esc_html__('Guest customer list will not be affected by the field saved in the "field in CSV" tab, "Field in CSV" tab only works on the CSV of registered customer', 'pisol-ewcl'); ?>
-            </div>
+            <h2 class="mt-0 mb-0 text-light font-weight-light h4"><?php echo esc_html__('Download Guest Customers', 'pisol-ewcl'); ?></h2>
             </div>
         </div>
         <div id="row_pi_ewcl_delimiter" class="row py-4 border-bottom align-items-center ">
             <div class="col-12 col-md-5">
-            <label class="h6 mb-0" for="pi_ewcl_delimiter"><?php echo esc_html__('Delimiters', 'pisol-ewcl'); ?></label>            <br><small><?php echo esc_html__('How value are separated in csv', 'pisol-ewcl'); ?></small>            </div>
+            <label class="h6 mb-0" for="pi_ewcl_delimiter"><?php echo esc_html__('Delimiters', 'pisol-ewcl'); ?></label>            <br><small><?php echo esc_html__('How values are separated in CSV', 'pisol-ewcl'); ?></small>            </div>
             <div class="col-12 col-md-7">
                 <select class="form-control" name="pi_ewcl_delimiter" id="pi_ewcl_delimiter">
                     <option value=",">,</option>
@@ -93,7 +86,7 @@ class Class_Pi_Ewcl_Guest{
         </div>
         <div id="row_pi_ewcl_order_status " class="row py-4 border-bottom align-items-center free-version">
             <div class="col-12 col-md-5">
-            <label class="h6 mb-0" for="pi_ewcl_order_status"><?php echo esc_html__('Guest customer based on order status', 'pisol-ewcl'); ?></label>            <br><small><?php echo esc_html__('Download guest customer based on the order status, use control to select multiple status, if left empty all guest will be selected', 'pisol-ewcl'); ?></small>            </div>
+            <label class="h6 mb-0" for="pi_ewcl_order_status"><?php echo esc_html__('Guest customers based on order status', 'pisol-ewcl'); ?></label>            <br><small><?php echo esc_html__('Download guest customers based on the order status. If left empty, all guests will be selected.', 'pisol-ewcl'); ?></small>            </div>
             <div class="col-12 col-md-7">
                 <select class="form-control" name="pi_ewcl_order_status" id="pi_ewcl_order_status" multiple>
                     <option value='pending' selected>Pending</option>
@@ -108,7 +101,7 @@ class Class_Pi_Ewcl_Guest{
         </div>
         <div id="row_pi_ewcl_download_offset" class="row py-4 border-bottom align-items-center ">
             <div class="col-12 col-md-5">
-            <label class="h6 mb-0" for="pi_ewcl_download_offset"><?php echo esc_html__('Gust checkout done between', 'pisol-ewcl'); ?></label>            <br><small><?php echo esc_html__('select the date range, If you leave this date empty it will download all the guest users in your website', 'pisol-ewcl'); ?></small>           
+            <label class="h6 mb-0" for="pi_ewcl_download_offset"><?php echo esc_html__('Guest checkouts done between', 'pisol-ewcl'); ?></label>            <br><small><?php echo esc_html__('Select the date range. If you leave this empty, it will download all guest users on your website.', 'pisol-ewcl'); ?></small>           
             </div>
             <div class="col-12 col-md-3">
             <div>
@@ -123,7 +116,7 @@ class Class_Pi_Ewcl_Guest{
             <div class="col-12 col-md-3">
             <div>
             <label for="pi_ewcl_download_before_date"><?php echo esc_html__('End Date', 'pisol-ewcl'); ?></label>
-            <input type="text" readonly class="form-control datepicker" name="pi_ewcl_download_before_date" id="pi_ewcl_download_before_date" placeholder="<?php echo esc_html__('Till this date', 'pisol-ewcl'); ?>">
+            <input type="text" readonly class="form-control datepicker" name="pi_ewcl_download_before_date" id="pi_ewcl_download_before_date" placeholder="<?php echo esc_html__('To this date', 'pisol-ewcl'); ?>">
             </div>
             <a href="javascript:void()" class="pi-clear-date"><?php echo esc_html__('Clear', 'pisol-ewcl'); ?></a>
             </div>
@@ -131,7 +124,7 @@ class Class_Pi_Ewcl_Guest{
 
         <div id="row_pi_ewcl_limit" class="row py-4 border-bottom align-items-center free-version">
             <div class="col-12 col-md-5">
-            <label class="h6 mb-0" for="pi_limit"><?php echo esc_html__('Extraction speed', 'pisol-ewcl'); ?></label><br><small><?php echo esc_html__('You can increase the speed of extraction by increasing this number, but if you are trying to extract a large record on shared hosting having this set to large number can break the extraction process', 'pisol-ewcl'); ?></small>
+            <label class="h6 mb-0" for="pi_limit"><?php echo esc_html__('Extraction speed', 'pisol-ewcl'); ?></label><br><small><?php echo esc_html__('You can increase the extraction speed by increasing this number. However, extracting large records on shared hosting with a high value may break the process.', 'pisol-ewcl'); ?></small>
             </div>
             <div class="col-12 col-md-7">
                 <input type="number" name="pi_limit"  id="pi_limit" value="50" class="form-control" step="1" min="10">         
