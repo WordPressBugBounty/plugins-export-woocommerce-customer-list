@@ -5,6 +5,7 @@ require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/general-class/cl
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/general-class/class-csv-maker2.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/general-class/class-email.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/review.php';
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/Pro_Warning.php';
 
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-pisol-ewcl-fields.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-pisol-customer-data-extractor.php';
