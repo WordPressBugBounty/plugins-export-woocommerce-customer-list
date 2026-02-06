@@ -119,8 +119,7 @@ class Pi_Ewcl_Menu{
                         <li><span style="color:white;">&#10003;</span> Control download speed</li>
                     </ul>
 
-                    <h4 class="pi-bottom-banner">💰 Just <?php echo esc_html(PI_EWCL_PRICE); ?></h4>
-                    <h4 class="pi-bottom-banner">🔥 Unlock all features and grow your sales!</h4>
+                    <h4 class="pi-bottom-banner">💰 Only <?php echo esc_html(PI_EWCL_PRICE); ?> <small style="color:#fff; display:inline; font-style:normal;">Billed yearly</small></h4>
 
                     <div class="text-center pb-3 pt-2">
                     <a class="btn btn-primary btn-lg" href="<?php echo esc_url(PI_EWCL_BUY_URL); ?>&utm_ref=bottom_link" target="_blank">🔓 Unlock Pro Now – Limited Time Price!</a>

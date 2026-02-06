@@ -1,129 +1,129 @@
-=== Export WooCommerce Customers to CSV – WordPress Users & Guest List Export ===
+=== Export Customers Users & Guest customer to CSV for WooCommerce  ===
 Contributors: rajeshsingh520
 Donate link: http://piwebsolution.com
 Tags: Customer list, Export user, Export users, User export, usermeta, Export customer, users, customer csv, export guest, guest csv
 Requires at least: 3.0.1
-Tested up to: 6.8
-Stable tag: 2.1.91
+Tested up to: 6.9
+Stable tag: 2.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Export WooCommerce customers list csv, Export WooCommerce guest customer list csv, Export WordPress users csv, Product Customer List for WooCommerce
+Export WooCommerce customer list CSV, export WooCommerce guest customer list CSV, export WordPress users CSV, Product Customer List for WooCommerce
 
 == Description ==
 
-Export WooCommerce customers list or Export users with one click, 
+Export WooCommerce customer list or export users with one click.
 
-* Download <strong>Complete customer</strong> list 
-* Download customer list, by <strong>skipping rows</strong> from top
-* <strong>Limit the number of Customer</strong> list rows in the exported CSV
+* Download <strong>complete customer</strong> list 
+* Download customer list by <strong>skipping rows</strong> from the top
+* <strong>Limit the number of customer</strong> list rows in the exported CSV
 * <strong>Modify the fields</strong> that you want in the generated CSV
-* You can <strong>save the field</strong> needed in CSV so you don't have to do this again, and from next time onwards you can directly click download
-* <strong>Automate</strong> the whole customer list exporting process, and receive the customer list in your inbox
-* <strong>Set email id</strong> on which you want to receive the email
-* Export customer usermeta data
+* You can <strong>save the fields</strong> needed in the CSV so you don't have to do this again; from next time onwards, you can directly click download
+* <strong>Automate</strong> the whole customer list exporting process and receive the customer list in your inbox
+* <strong>Set the email ID</strong> on which you want to receive the email
+* Export customer user meta data
 
 https://www.youtube.com/watch?v=_tREXIJk96Y&cc_load_policy=1
 
 == PRO Version ==
 Here are the features of the PRO version of Export customer list:
 
-[Buy PRO version, Limited period offer](https://www.piwebsolution.com/product/export-woocommerce-customer-list/) | [Documentation](https://www.piwebsolution.com/user-documentation-export-customer-list-for-woocommerce/)
+[Buy PRO version, Limited-period offer](https://www.piwebsolution.com/product/export-woocommerce-customer-list/) | [Documentation](https://www.piwebsolution.com/user-documentation-export-customer-list-for-woocommerce/)
 
 * All the features of the FREE version
-* It allows you to download customer based on there <strong>registration dates</strong>
-* It allow you to give <strong>custom labels to the columns</strong> of the generated CSV
+* It allows you to download customers based on their <strong>registration dates</strong>
+* It allows you to give <strong>custom labels to the columns</strong> of the generated CSV
 * You can download users based on the <strong>registration date range</strong>
-* You can set <strong>frequency of the automated email</strong>, to be Hourly, Twice Daily, Daily, Weekly
-* The list that you will receive will contain only the user registered during this time period
-* You can download <strong>Guest customer</strong> data in separate CSV
-* You can filter out guest customer list based on there <strong>order status</strong>
-* You can filter out guest customer list based on there <strong>order placement date</strong>
-* **Export users:** You can download any other registered customer date by <strong>selecting there role</strong>, so now you can download WooCommerce customer plugin normal WordPress user data as well
-* Download customer record based on the **product they have purchased** 
-* You can make a condition of downloading Product Customer List of only those customer who purchased product A and product B together in single order
-* You can control the fields you want to download in Product Customer List record
+* You can set <strong>frequency of the automated email</strong>, to be Hourly, Twice Daily, Daily, or Weekly
+* The list that you will receive will contain only the users registered during this time period
+* You can download <strong>Guest customer</strong> data in a separate CSV
+* You can filter out the guest customer list based on their <strong>order status</strong>
+* You can filter out the guest customer list based on their <strong>order placement date</strong>
+* **Export users:** You can download any other registered user data by <strong>selecting their role</strong>, so now you can download WooCommerce customer or normal WordPress user data as well
+* Download customer records based on the **product they have purchased** 
+* You can make a condition for downloading the Product Customer List of only those customers who purchased product A and product B together in a single order
+* You can control the fields you want to download in the Product Customer List records
 * You can restrict the Product Customer List by **date of purchase or order status** as well
 
-* This plugin can export custom data field stored in:
-User meta data, stored in xx_usermeta table
-Order meta data, stored in xx_postmeta table
-For Registered Customer: Plugin first tries to search for the custom field in user meta data and if it is not found there then it searches order meta data to find the value
-For Guest customer: It directly searches order meta for the custom field data
+* This plugin can export custom data fields stored in:
+User meta data, stored in the xx_usermeta table
+Order meta data, stored in the xx_postmeta table
+For registered customers: The plugin first tries to search for the custom field in user meta data, and if it is not found there, then it searches order meta data to find the value
+For guest customers: It directly searches order meta data for the custom field data
 
-* You can receive Registered customer, **guest customer** or both customer record in email attachment
+* You can receive registered customer, **guest customer** or both customer records in email attachments
 
 == Frequently Asked Questions ==
-= I just installed the plugin, I can't find it's setting page =
+= I just installed the plugin; I can't find its settings page =
 You can find its download page or options page in 
 **Tools >> Export customer**
 
 = I want all the WooCommerce customer fields in the exported CSV =
-Yes, just click the download button it will contain all the fields of the WooCommerce customer
+Yes, just click the Download button; it will contain all the fields of the WooCommerce customer
 
 = Can I save the fields I need in the exported CSV = 
-Yes, you can save the fields needed, so next time when you will download only the selected field will be exported to the csv
+Yes, you can save the fields needed, so next time when you download, only the selected fields will be exported to the CSV
 
 = Can I modify the label of the exported CSV fields =
-Yes, In the PRO version you can modify the field labels and save it too, so when you will download the CSV it will have the modified fields that way you can directly use this csv in your external system
+Yes, in the PRO version you can modify the field labels and save them too, so when you download the CSV it will have the modified fields. That way, you can directly use this CSV in your external system
 
-= I want to receive the exported customer CSV in email =
-Yes, you can do this, just enter your email and it will send exported csv list as an attachment in the email twice daily. and the list will contain all the customers in your site
+= I want to receive the exported customer CSV via email =
+Yes, you can do this. Just enter your email and it will send the exported CSV list as an attachment via email twice daily, and the list will contain all the customers on your site
 
-= I don't want to receive emails Twice daily, can I change the frequency of the email =
-Yes, In the PRO version you can change the frequency of the customer list email that you receive. You can set the frequency to be Hourly, Twice Daily, Daily, or Weekly
+= I don't want to receive emails twice daily, can I change the frequency of the email =
+Yes, in the PRO version you can change the frequency of the customer list email that you receive. You can set the frequency to be Hourly, Twice Daily, Daily, or Weekly
 
-= CSV that I receive contains all the customer in my site, can I receive customer registered in that time interval =
-Yes, In the pro version you will only receive the customer registered during that particular time interval. So if you have set the Weekly, you will receive one email at an interval of 7 days and will contain a list of customer registered during that interval of 7 days
+= The CSV that I receive contains all the customers on my site, can I receive customers registered in that time interval =
+Yes, in the PRO version you will only receive the customers registered during that particular time interval. So if you have set Weekly, you will receive one email at an interval of 7 days, and it will contain a list of customers registered during that 7-day interval
 
 = I want to modify the subject and the message of the email =
-PRO version allows you to change the subject and message of the email
+The PRO version allows you to change the subject and message of the email
 
 = I want to change the delimiter used in the CSV file = 
-Yes you can do that in the pro version for the downloading part
+Yes, you can do that in the PRO version for the downloading part
 
-= I don't allow customer registration on site, all do guest checkout =
-There is an option to download guest customer as well, in the free version it will download 30 at a time only, in the PRO version you can export customer from WooCommerce in one CSV
+= I don't allow customer registration on the site, all do guest checkout =
+There is an option to download guest customers as well. In the free version, it will download only 30 at a time; in the PRO version, you can export customers from WooCommerce in one CSV
 
-= Columns option don't work on the guest customer csv =
-you can't modify columns option in the Guest csv, field modification only works for the registered customer csv
+= Columns option doesn't work on the guest customer CSV =
+You can't modify the columns option in the guest CSV; field modification only works for the registered customer CSV
 
-= Guest customer data can have repeating customer detail =
-Yes, as it is extracted from the order placed by the customer, so if some customer has placed multiple orders then there record will repeat in the CSV
+= Guest customer data can have repeated customer details =
+Yes, as it is extracted from the orders placed by the customer, so if a customer has placed multiple orders, then their record will repeat in the CSV
 
-= I want to download all the guest customer whose order status is processing =
-Yes you can do that in the pro version, pro version allows you to download guest customer based on their WooCommerce Order status
+= I want to download all the guest customers whose order status is processing =
+Yes, you can do that in the PRO version. The PRO version allows you to download guest customers based on their WooCommerce order status
 
 = I want to export customers from WooCommerce, all at once =
-In the pro version you can do that for the registered customer, just leave the "Registration done between field empty and it will get all customers from WooCommerce 
+In the PRO version you can do that for registered customers; just leave the 'Registration done between' field empty and it will get all customers from WooCommerce 
 
-= If you want to download WordPress user, that is export users other then customer =
-You can do so in the PRO version it allows you to select the user role whose record you will like to download
+= If you want to download WordPress users, that is export users other than customers =
+You can do so in the PRO version; it allows you to select the user role whose records you would like to download
 
-= I am using a plugin WhatsApp number, I want to download that from the CSV (Registered user) =
-In the Pro version, there is an option that allows you to add extra user meta field in the list of rows to extract in the CSV, using this option you can add an extra field that you want to extract, (We have given you the list WooCommerce meta fields)
-Step 1: Get the name of the user meta field that you want to add in csv (and make sure that field is not present in our given list)
-Step 2: Add that name on the left side form
-Step 3: Go to the "select field to add in CSV"
-Step 4: Your added field will appear in the list, select it and save it
+= I am using a plugin for WhatsApp number, I want to download that from the CSV (Registered user) =
+In the Pro version, there is an option that allows you to add extra user meta fields in the list of rows to extract in the CSV. Using this option, you can add an extra field that you want to extract (we have given you the list of WooCommerce meta fields)
+Step 1: Get the name of the user meta field that you want to add in the CSV (and make sure that field is not present in our given list)
+Step 2: Add that name in the left-side form
+Step 3: Go to the 'Select field to add in CSV'
+Step 4: Your added field will appear in the list; select it and save it
 
-= I want to send guest customer report in attachment =
-Pro version allows you to select which report you want to receive, you can receive Registered customer, Guest customer, or both the customer detail in email attachment csv
+= I want to send the guest customer report as an attachment =
+The PRO version allows you to select which report you want to receive; you can receive registered customer, guest customer, or both customer details in an email attachment (CSV)
 
-= We want to export some custom data from a plugin but it is not exporting value (pro) =
-This plugin can export custom data field stored in:
-User meta data, stored in xx_usermeta table
-Order meta data, stored in xx_postmeta table
-so do confirm with the plugin developer whose data you want to export how they have stored those data.
+= We want to export some custom data from a plugin but it is not exporting values (PRO) =
+This plugin can export custom data fields stored in:
+User meta data, stored in the xx_usermeta table
+Order meta data, stored in the xx_postmeta table
+so confirm with the plugin developer whose data you want to export how they have stored that data.
 
-For Registered Customer: Plugin first tries to search for the custom field in user meta data and if it is not found there then it searches order meta data to find the value
-For Guest customer: It directly searches order meta for the custom field data
+For registered customers: The plugin first tries to search for the custom field in user meta data, and if it is not found there, then it searches order meta data to find the value
+For guest customers: It directly searches order meta data for the custom field data
 
-= We want to download customer who purchases some specific product =
-That can be done in the pro version
+= We want to download customers who purchased a specific product =
+That can be done in the PRO version
 
 = Is it HPOS compatible =
-Yes the Free version and PRO version both are HPOS compatible
+Yes, the free version and PRO version both are HPOS compatible
 
 == Screenshots ==
 1. Exporting registered customer list by export WooCommerce customer list plugin
@@ -142,17 +142,17 @@ Yes the Free version and PRO version both are HPOS compatible
 * Tested with WC 10.0.2
 
 = 2.1.74 =
-* Export customer list woocommerce plugin tested for WC 9.9.5
-* UI improved for Export customer list woocommerce plugin
+* Export customer list WooCommerce plugin tested for WC 9.9.5
+* UI improved for export customer list WooCommerce plugin
 
 = 2.1.73 =
-* export customer list woocommerce plugin tested for WC 9.9.3
+* Export customer list WooCommerce plugin tested for WC 9.9.3
 
 = 2.1.72 =
 * Tested with WC 9.8.0
 
 = 2.1.71 =
-* translation warning fixed
+* Translation warning fixed
 
 = 2.1.70 =
 * Tested with WC 9.7.1
@@ -179,8 +179,8 @@ Yes the Free version and PRO version both are HPOS compatible
 * Tested with WC 9.2.3
 
 = 2.1.43 =
-* calendar fixed
-* limit on extraction of guest customer removed in the free version
+* Calendar fixed
+* Limit on extraction of guest customers removed in the free version
 
 = 2.1.42 =
 * Tested with WC 9.2.0
@@ -192,7 +192,7 @@ Yes the Free version and PRO version both are HPOS compatible
 * Compatible with PHP 8.2
 
 = 2.0.79 =
-* Backend css changes
+* Backend CSS changes
 
 == Privacy ==
 
@@ -201,7 +201,7 @@ If you choose to opt in from the plugin settings, or submit optional feedback du
 - Plugin version  
 - WordPress version  
 - WooCommerce version  
-- Site url
+- Site URL
 - Deactivation reason (if submitted)
 
 This data is used solely to improve plugin quality, compatibility, and features. No personal or user-specific data is collected without consent.
