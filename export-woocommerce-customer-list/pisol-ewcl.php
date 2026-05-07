@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              piwebsolution.com
- * @since             2.2.4
+ * @since             2.2.6
  * @package           Pisol_Ewcl
  *
  * @wordpress-plugin
  * Plugin Name:       PiWeb Export Customers Users & Guest customer to CSV for WooCommerce
  * Plugin URI:        piwebsolution.com/get-a-quotation/
  * Description:       Export customer list from WooCommerce with one click
- * Version:           2.2.4
+ * Version:           2.2.6
  * Author:            PI Websolution
  * Author URI:        piwebsolution.com
  * License:           GPL-2.0+
@@ -60,13 +60,13 @@ if(!is_plugin_active( 'woocommerce/woocommerce.php')){
 
 /**
  * Currently plugin version.
- * Start at version 2.2.4 and use SemVer - https://semver.org
+ * Start at version 2.2.6 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'PISOL_EWCL_VERSION', '2.2.4' );
+define( 'PISOL_EWCL_VERSION', '2.2.6' );
 define( 'PI_EWCL_DELETE_SETTING', false );
 define( 'PI_EWCL_PRICE', '$2 / month' );
-define( 'PI_EWCL_BUY_URL', 'https://www.piwebsolution.com/checkout/?add-to-cart=1596&variation_id=1597&utm_campaign=export_customer&utm_source=website&utm_medium=direct-buy' );
+define( 'PI_EWCL_BUY_URL', 'https://www.piwebsolution.com/checkout/?add-to-cart=1596&variation_id=1597&utm_campaign=export-customer-free-plugin&utm_source=website&utm_medium=direct-buy' );
 
 /**
  * The code that runs during plugin activation.
