@@ -4,7 +4,7 @@ Donate link: http://piwebsolution.com
 Tags: Customer list, Export user, Export users, User export, usermeta, Export customer, users, customer csv, export guest, guest csv
 Requires at least: 3.0.1
 Tested up to: 7.0
-Stable tag: 2.2.7
+Stable tag: 2.2.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -134,6 +134,9 @@ Yes, the free version and PRO version both are HPOS compatible
 6. Sending customer list in email attachment automatically 
 
 == Changelog ==
+
+= 2.2.9 =
+* Tested with WC 10.8
 
 = 2.2.7 =
 * Tested with WP 7.0
