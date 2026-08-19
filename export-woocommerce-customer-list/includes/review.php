@@ -21,8 +21,8 @@ class pisol_ewcl_export_customer_review{
         $this->slug = $slug;
         $this->activation_date = "pi_review_activation_date_{$this->slug}";
         $this->saved_value = "pi_review_saved_value_{$this->slug}";
-        $this->review_url = "https://wordpress.org/support/plugin/{$this->slug}/reviews/?rate=5#new-post";
-        $this->review_after = 6;
+        $this->review_url = "https://wordpress.org/support/plugin/{$this->slug}/reviews/#wp-bbp_topic_content-wrap";
+        $this->review_after = 14;
         $this->buy_url = $buy_url;
         $this->price = $price;
 
@@ -102,6 +102,11 @@ class pisol_ewcl_export_customer_review{
 
         //update_option($this->saved_value, array('preference'=> 'later', 'update_at'=>'2021/06/10'));
         //delete_option($this->saved_value);
+
+        add_filter('allowed_redirect_hosts', function($hosts){
+            $hosts[] = 'wordpress.org';
+            return $hosts;
+        });
         
         add_action( 'admin_notices', array($this, 'display_admin_notice'),20 );
         add_action( "admin_post_pi_save_review_preference_{$this->slug}", array($this, 'savePreference'),20 );
@@ -125,6 +130,7 @@ class pisol_ewcl_export_customer_review{
         
         .pi-active-btn {
             background-color: #00adb5;
+            color: #fff !important;
         }
         
         .pi-passive-btn {
@@ -143,16 +149,21 @@ class pisol_ewcl_export_customer_review{
         $notice .= '<div class="pi-flex">';
         $notice .= '<img style="max-width:90px; height:auto;" src="'.plugin_dir_url( __FILE__ ).'review-icon.svg" alt="pi web solution">';
         $notice .= '<div style="margin-left:20px;">';
-        $notice .= '<p>'.__("Hi there, You've been using <strong>{$this->title}</strong> on your site for a few days <br>- I hope it's been helpful. If you're enjoying my plugin, would you mind rating it 5-stars to help spread the word?").'</p>';
+        /* translators: %s: the plugin title shown to users. */
+        $notice .= '<p>' . sprintf( __( "You've been using <strong>%s</strong> for a few weeks now <br>— hope it's been working well for you! Would you like to leave a review to help spread the word?", 'pisol-ewcl' ), esc_html( $this->title ) ) . '</p>';
         $notice .= '<ul class="pi-flex" style="margin-top:15px;
         grid-template-columns: 1fr 1fr 1fr;
         grid-column-gap: 20px;
         text-align: center;">';
-        $notice .= '<li><a val="later" class="pi-active-btn pisol-review-btn" href="'.add_query_arg(array('action' => "pi_save_review_preference_{$this->slug}", 'preference'=>'later',  '_wpnonce'=>wp_create_nonce( "pi_save_review_preference_{$this->slug}" )), admin_url('admin-post.php')).'">'.__("Remind me later").'</a></li>';
-        $notice .= '<li><a  class="pi-active-btn pisol-review-btn" style="font-weight:bold;" val="given" href="'.add_query_arg(array('action' => "pi_save_review_preference_{$this->slug}", 'preference'=>'now','_wpnonce'=>wp_create_nonce( "pi_save_review_preference_{$this->slug}" )), admin_url('admin-post.php')).'" target="_blank">'.__("Review Here").'</a></li>';
-        $notice .= '<li><a  class="pi-passive-btn pisol-review-btn" val="never" href="'.add_query_arg(array('action' => "pi_save_review_preference_{$this->slug}", 'preference'=>'never', '_wpnonce'=>wp_create_nonce( "pi_save_review_preference_{$this->slug}" )), admin_url('admin-post.php')).'">'.__("I would not").'</a></li>';	 
+        $notice .= '<li><a  class="pi-active-btn pisol-review-btn" style="font-weight:bold; text-decoration:none;" val="given" href="'.add_query_arg(array('action' => "pi_save_review_preference_{$this->slug}", 'preference'=>'now','_wpnonce'=>wp_create_nonce( "pi_save_review_preference_{$this->slug}" )), admin_url('admin-post.php')).'" target="_blank">'.__("Sure, I'll review",'pisol-ewcl').'</a></li>';
+        
+        $notice .= '<li><a  class="pi-active-btn pisol-review-btn" style="font-weight:bold; text-decoration:none;" val="given" href="'.add_query_arg(array('action' => "pi_save_review_preference_{$this->slug}", 'preference'=>'now','_wpnonce'=>wp_create_nonce( "pi_save_review_preference_{$this->slug}" )), admin_url('admin-post.php')).'" target="_blank">'.__("Want to suggest improvement",'pisol-ewcl').'</a></li>';
+        
+        $notice .= '<li><a val="later" class="pi-active-btn pisol-review-btn" style="text-decoration:none;" href="'.add_query_arg(array('action' => "pi_save_review_preference_{$this->slug}", 'preference'=>'later',  '_wpnonce'=>wp_create_nonce( "pi_save_review_preference_{$this->slug}" )), admin_url('admin-post.php')).'">'.__("No thanks",'pisol-ewcl').'</a></li>';
+        //$notice .= '<li><a  class="pi-passive-btn pisol-review-btn" val="never" href="'.add_query_arg(array('action' => "pi_save_review_preference_{$this->slug}", 'preference'=>'never', '_wpnonce'=>wp_create_nonce( "pi_save_review_preference_{$this->slug}" )), admin_url('admin-post.php')).'">'.__("I would not",'pisol-ewcl').'</a></li>';	 
         if($this->buy_url && $this->price){       
-            $notice .= '<li><a target="_blank" class="pi-buy-now-btn pisol-review-btn" val="never" href="'.esc_url($this->buy_url).'&utm_ref=review_reminder">'.sprintf(__("BUY PRO FOR %s"), $this->price).'</a></li>';	
+            // translators: %s is the pro version price including currency, e.g. "$19.99".
+            $notice .= '<li><a target="_blank" class="pi-buy-now-btn pisol-review-btn" val="never" href="'.esc_url($this->buy_url).'&utm_ref=review_reminder">'.sprintf(__("BUY PRO FOR %s",'pisol-ewcl'), $this->price).'</a></li>';	
         }        
         $notice .= '</ul>';
         $notice .= '</div>';
@@ -171,8 +182,8 @@ class pisol_ewcl_export_customer_review{
     }
 
     function savePreference(){
-            $nonce = isset($_GET['_wpnonce']) ? $_GET['_wpnonce'] : '' ;
-            $preference = isset($_GET['preference']) ? $_GET['preference'] : 'later';
+            $nonce = isset($_GET['_wpnonce']) ? sanitize_text_field(wp_unslash($_GET['_wpnonce'])) : '' ;
+            $preference = isset($_GET['preference']) ? sanitize_text_field(wp_unslash($_GET['preference'])) : 'later';
 
             if(!isset($_GET['_wpnonce']) || !wp_verify_nonce($nonce,"pi_save_review_preference_{$this->slug}")){
                 wp_die(esc_html('Link has expired'), '', array('response' => 403));
@@ -196,7 +207,8 @@ class pisol_ewcl_export_customer_review{
                     break;
             }
             update_option($this->saved_value, $values);
-            wp_redirect($redirect);
+            wp_safe_redirect($redirect);
+            exit;
     }
 
     function getInstallationDate(){
@@ -218,5 +230,5 @@ class pisol_ewcl_export_customer_review{
     }
 }
     
-new pisol_ewcl_export_customer_review('Export customer list plugin', 'export-woocommerce-customer-list', PI_EWCL_BUY_URL, PI_EWCL_PRICE);
+new pisol_ewcl_export_customer_review('Export customer list plugin', 'export-woocommerce-customer-list');
 }
