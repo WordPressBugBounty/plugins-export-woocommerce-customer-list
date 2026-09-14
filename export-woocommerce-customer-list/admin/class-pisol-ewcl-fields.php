@@ -116,10 +116,10 @@ class class_fields{
        <div class="row">
             
             <div class="col-12 col-md-12">
-            <div class="alert alert-info text-center">
+            <div class="pisol-alert pisol-alert-info text-center">
             <?php echo esc_html__('This is only available in the PRO version','pisol-ewcl'); ?>
             </div>
-            <div class="border p-2">
+            <div class="pisol-alert pisol-alert-danger">
                 <b>Step 1:</b> Get the name of the user meta field that you want to add to the CSV (and make sure that field is not present in our provided list)<br>
                 <b>Step 2:</b> Add that name in the left-side form<br>
                 <b>Step 3:</b> Go to the "select field to add in CSV" section<br>

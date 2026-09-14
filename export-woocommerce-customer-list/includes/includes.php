@@ -1,6 +1,5 @@
 <?php
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/pisol.class.form.php';
-require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/pisol.class.promotion.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/general-class/class-csv-maker.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/general-class/class-csv-maker2.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/general-class/class-email.php';

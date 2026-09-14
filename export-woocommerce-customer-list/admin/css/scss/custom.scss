@@ -1,0 +1,27 @@
+.pisol-content input[type=submit]{
+    margin-left:0 !important;
+    margin-right:0 !important;
+}
+
+.pisol-alert{
+    padding:10px 20px;
+    margin:10px !important;
+    background:#eef2ff;
+    border-radius:6px;
+    position:relative;
+    &.pisol-alert-warning{
+        box-shadow: inset 3px 0 0 #ff0000;
+    }
+
+    &.pisol-alert-info{
+        box-shadow: inset 3px 0 0#b1f1b1;
+    }
+
+    &.pisol-alert-danger{
+        box-shadow: inset 3px 0 0 #ff0000;
+    }
+
+    &.pisol-alert-success{
+        box-shadow: inset 3px 0 0#b1f1b1;
+    }
+}

@@ -124,7 +124,7 @@ class Class_Pi_Ewcl_Email{
                 new pisol_class_form_ewcl($setting, $this->setting_key);
             }
         ?>
-    <div class="alert alert-danger mt-2">
+    <div class="pisol-alert pisol-alert-danger mt-2">
     FREE version will send the customer list by email twice daily. In the PRO version you can change the frequency to <strong>Daily, Weekly, Hourly</strong>. The email will contain users registered during the selected time period.<br>
     <strong>Free version will not</strong> send guest customer records by email.
     </div>

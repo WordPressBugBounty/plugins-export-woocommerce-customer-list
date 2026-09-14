@@ -31,7 +31,7 @@ class Pi_Ewcl_Menu{
     public function bootstrap_style() {
         wp_enqueue_style( 'jquery-ui',  plugin_dir_url( __FILE__ ).'css/jquery-ui.css');
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/pisol-ewcl-admin.css', array(), $this->version, 'all' );
-		wp_enqueue_style( $this->plugin_name.'_promotion', plugin_dir_url( __FILE__ ) . 'css/promotion.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name.'_admin', plugin_dir_url( __FILE__ ) . 'css/admin.css', array(), $this->version, 'all' );
 		wp_enqueue_style( $this->plugin_name."_bootstrap", plugin_dir_url( __FILE__ ) . 'css/bootstrap.css', array(), $this->version, 'all' );
 		wp_enqueue_style( 'select2', WC()->plugin_url() . '/assets/css/select2.css');
         wp_enqueue_script( 'selectWoo', WC()->plugin_url() . '/assets/js/selectWoo/selectWoo.full.min.js', array( 'jquery' ), '1.0.4' );
@@ -53,51 +53,30 @@ class Pi_Ewcl_Menu{
             settings_errors();
         }
         ?>
-        <div class="bootstrap-wrapper">
-        <div class="pisol-container mt-2">
-            <div class="pisol-row">
-                    <div class="col-12">
-                        <div class='bg-dark'>
-                        <div class="pisol-row">
-                            <div class="col-12 col-sm-2 py-2">
-                                    <a href="https://www.piwebsolution.com/" target="_blank"><img class="img-fluid ml-2" src="<?php echo plugin_dir_url( __FILE__ ); ?>img/pi-web-solution.svg"></a>
-                            </div>
-                            <div class="col-12 col-sm-10 d-flex small text-center pisol-top-menu">
-                                <?php //do_action($this->plugin_name.'_tab'); ?>
-                                <!--<a class=" px-3 text-light d-flex align-items-center  border-left border-right  bg-info " href="https://www.piwebsolution.com/documentation-for-live-sales-notifications-for-woocommerce-plugin/">
-                                    Documentation
-                                </a>-->
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-            </div>
-            <?php do_action($this->plugin_name.'_tab_sub_menu'); ?>
-            <div class="pisol-row">
-                <div class="col-12">
-                <div class="bg-light border pl-3 pr-3 pt-0">
-                    <div class="pisol-row">
-                        <div class="col">
-                        <?php do_action($this->plugin_name.'_tab_content'); ?>
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-4 col-lg-3 border-left">
-                            <div id="pisol-side-menu" class="mb-4 rounded py-4">
-                                <?php do_action($this->plugin_name.'_tab'); ?>
-                            </div>
-                            <?php do_action($this->plugin_name.'_promotion'); ?>
-                        </div>
-                    </div>
-                </div>
+        <div class="pisol-container bootstrap-wrapper">
+            <div class="pisol-header">
+                <div id="pisol-header-bar">
+                    <a href="https://www.piwebsolution.com/" target="_blank"><img id="pi-logo" class="pisol-img-fluid" src="<?php echo plugin_dir_url( __FILE__ ); ?>img/pi-web-solution.svg"></a>
                 </div>
             </div>
-        </div>
+
+            <div class="pisol-left-sidebar">
+                <div id="pisol-side-menu">
+                    <?php do_action($this->plugin_name.'_tab'); ?>
+                </div>
+                <?php do_action($this->plugin_name.'_promotion'); ?>
+            </div>
+
+            <div class="pisol-content">
+                <label for="pi-left-sidebar-controller" class="pi-left-sidebar-closing-circle"><input id="pi-left-sidebar-controller" type="checkbox"/></label>
+                <?php do_action($this->plugin_name.'_tab_content'); ?>
+            </div>
         </div>
         <?php
         $this->support();
     }
 
     function promotion(){
-        if(isset($_GET['tab']) && $_GET['tab'] == 'other_plugins') return;
         ?>
 
             <div class="pisol-ewcl-side-banner">
@@ -133,15 +112,7 @@ class Pi_Ewcl_Menu{
                 <span>Unlock Pro Now</span>
                 <small>Limited Time Price</small>
             </a>
-            </div>
-
-            <div class="bg-dark text-light text-center mb-3">
-                <a href="<?php echo esc_url(PI_EWCL_BUY_URL); ?>" target="_blank">
-                <?php  new pisol_promotion("pi_ewcl_installation_date"); ?>
-                </a>
-            </div>
-
-            
+            </div>            
         <?php
     }
 
